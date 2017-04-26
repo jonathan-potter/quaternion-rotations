@@ -1,9 +1,8 @@
 import * as THREE from 'three'
-const { PI: pi, tan } = Math
 
 const WIDTH = window.innerWidth
 const HEIGHT = window.innerHeight
-const FAR = 5000;
+const FAR = 5000
 const meshes = []
 const renderer = new THREE.WebGLRenderer({ antialias: true })
 const scene = new THREE.Scene()

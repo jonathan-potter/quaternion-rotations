@@ -3,7 +3,6 @@ import { init, render, setPositions, addObjectsToScene, camera as threeCamera } 
 import MovingObject from 'classes/moving-object'
 import Camera, { DIRECTION, UP } from 'classes/camera'
 import Quaternion from 'classes/Quaternion'
-import Vec3 from 'math/vec3'
 
 const { requestAnimationFrame } = window
 const { PI: pi } = Math
