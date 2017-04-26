@@ -1,5 +1,5 @@
 import { Matrix4 } from 'three'
-import { init, render, setPositions, addObjectsToScene, camera as threeCamera } from 'utility/canvas-wrapper'
+import { init, render, setPositions, addObjectsToScene, camera as threeCamera, skyBox} from 'utility/canvas-wrapper'
 import MovingObject from 'classes/moving-object'
 import Camera, { DIRECTION, UP } from 'classes/camera'
 import Quaternion from 'classes/Quaternion'
@@ -24,6 +24,7 @@ export default class Game {
 
     threeCamera.up.set(up.x, up.y, up.z)
     threeCamera.position.set(position.x, position.y, position.z)
+    skyBox.position.set(position.x, position.y, position.z)
 
     const matrix = new Matrix4()
     const target = {
@@ -33,14 +34,12 @@ export default class Game {
     }
 
     matrix.lookAt(position, target, up)
-
     threeCamera.quaternion.setFromRotationMatrix(matrix)
   }
 
   updateCameraState () {
     let { direction, up, velocity } = camera
-    console.log(direction)
-    console.log(up)
+
 
     const right = direction.cross(up)
 
@@ -94,11 +93,11 @@ export default class Game {
     }
 
     if (keyStates['-'] || keyStates['k']) {
-      velocity = velocity.subtract(direction)
+      velocity = velocity.subtract(direction.scale(0.2))
     }
 
     if (keyStates['0'] || keyStates['i']) {
-      velocity = velocity.add(direction)
+      velocity = velocity.add(direction.scale(0.2))
     }
 
     camera.direction = direction

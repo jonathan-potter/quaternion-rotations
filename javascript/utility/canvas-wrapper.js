@@ -9,6 +9,7 @@ const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT)
 const light = new THREE.DirectionalLight(0xffffbb, 0x080820, 0.7)
 
+let skyBox
 let numberOfMeshes
 
 export function init (meshCount) {
@@ -44,6 +45,25 @@ export function init (meshCount) {
 
   scene.add(camera)
   scene.add(light)
+
+  var geometry = new THREE.SphereGeometry(2000, 60, 40);
+  var uniforms = {
+    texture: { type: 't', value: THREE.ImageUtils.loadTexture('/images/eso_dark.jpg') }
+  };
+
+  var material = new THREE.ShaderMaterial( {
+    uniforms:       uniforms,
+    vertexShader:   document.getElementById('sky-vertex').textContent,
+    fragmentShader: document.getElementById('sky-fragment').textContent
+  });
+
+  skyBox = new THREE.Mesh(geometry, material);
+  skyBox.scale.set(-1, 1, 1);
+  skyBox.eulerOrder = 'XZY';
+  skyBox.renderDepth = 1000.0;
+  scene.add(skyBox);
+
+
 }
 
 export function addObjectsToScene (meshCount) {
@@ -70,4 +90,4 @@ export function setPositions (positions) {
   })
 }
 
-export { camera }
+export { camera, skyBox }

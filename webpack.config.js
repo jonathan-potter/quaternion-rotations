@@ -14,6 +14,7 @@ module.exports = {
       css: path.resolve(__dirname, 'css'),
       javascript: path.resolve(__dirname, 'javascript'),
       classes:    path.resolve(__dirname, 'javascript', 'classes'),
+      images:     path.resolve(__dirname, 'javascript', 'images'),
       math:       path.resolve(__dirname, 'javascript', 'math'),
       utility:    path.resolve(__dirname, 'javascript', 'utility')
     }
@@ -28,6 +29,10 @@ module.exports = {
             { loader: 'sass-loader', options: { sourceMap: true } }
           ]
         })
+      },
+      {
+        test: /\.jpg$/,
+        use: 'raw-loader'
       }
     ]
   },
