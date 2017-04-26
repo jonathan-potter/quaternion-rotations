@@ -94,11 +94,11 @@ export default class Game {
       up = UP
     }
 
-    if (keyStates['-']) {
+    if (keyStates['-'] || keyStates['k']) {
       velocity = velocity.subtract(direction)
     }
 
-    if (keyStates['+']) {
+    if (keyStates['0'] || keyStates['i']) {
       velocity = velocity.add(direction)
     }
 

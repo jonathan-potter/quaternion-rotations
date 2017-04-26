@@ -3,6 +3,7 @@ const { PI: pi, tan } = Math
 
 const WIDTH = window.innerWidth
 const HEIGHT = window.innerHeight
+const FAR = 5000;
 const meshes = []
 const renderer = new THREE.WebGLRenderer({ antialias: true })
 const scene = new THREE.Scene()
@@ -33,6 +34,7 @@ export function init (meshCount) {
   camera.position.x = 0
   camera.position.y = 0
   camera.position.z = 0
+  camera.far = FAR
 
   light.position.set(0, 1000, 20)
   light.target.position.set(0, 0, 0)

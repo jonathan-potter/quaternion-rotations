@@ -4,7 +4,7 @@ window.Vec3 = Vec3
 const { abs } = Math
 
 let CENTER = { x: 0, y: 0, z: 0 }
-const BOUNDS = 1000
+const BOUNDS = 5000
 
 export default class MovingObject {
   constructor () {
