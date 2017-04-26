@@ -95,11 +95,16 @@ export default class Game {
     }
 
     if (keyStates['-']) {
-      velocity.add(direction.scale(0.05))
+      velocity = velocity.subtract(direction)
+    }
+
+    if (keyStates['+']) {
+      velocity = velocity.add(direction)
     }
 
     camera.direction = direction
     camera.up = up
+    camera.velocity = velocity
   }
 
   step () {

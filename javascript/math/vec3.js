@@ -15,6 +15,14 @@ export default class Vec3 {
     })
   }
 
+  subtract (other) {
+    return new Vec3({
+      x: this.x - other.x,
+      y: this.y - other.y,
+      z: this.z - other.z
+    })
+  }
+
   scale (scalar) {
     return new Vec3({
       x: this.x * scalar,
