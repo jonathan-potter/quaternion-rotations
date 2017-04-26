@@ -96,7 +96,7 @@ export default class Game {
       velocity = velocity.subtract(direction.scale(0.2))
     }
 
-    if (keyStates['0'] || keyStates['i']) {
+    if (keyStates['0'] || keyStates['='] || keyStates['i']) {
       velocity = velocity.add(direction.scale(0.2))
     }
 

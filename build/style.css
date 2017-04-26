@@ -1,0 +1,11 @@
+html, body, canvas {
+  padding: 0;
+  border: 0;
+  margin: 0; }
+
+html, body, canvas {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jc3MvYXBwLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFVO0VBQ1YsVUFBUztFQUNULFVBQVMsRUFDWjs7QUFFRDtFQUNJLFlBQVc7RUFDWCxhQUFZO0VBQ1osaUJBQWdCLEVBQ25CIiwiZmlsZSI6ImJ1aWxkL3N0eWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbImh0bWwsIGJvZHksIGNhbnZhcyB7XG4gICAgcGFkZGluZzogMDtcbiAgICBib3JkZXI6IDA7XG4gICAgbWFyZ2luOiAwO1xufVxuXG5odG1sLCBib2R5LCBjYW52YXMge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIC4vY3NzL2FwcC5zY3NzIl0sInNvdXJjZVJvb3QiOiIifQ==*/
