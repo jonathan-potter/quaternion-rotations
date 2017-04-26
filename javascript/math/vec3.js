@@ -42,7 +42,7 @@ export default class Vec3 {
   cross (other) {
     return new Vec3({
       x: this.y * other.z - other.y * this.z,
-      y: this.x * other.z - other.x * this.z,
+      y: -(this.x * other.z - other.x * this.z),
       z: this.x * other.y - other.x * this.y
     })
   }

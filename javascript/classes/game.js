@@ -39,7 +39,7 @@ export default class Game {
   }
 
   updateCameraState () {
-    let { direction, up } = camera
+    let { direction, up, velocity } = camera
     console.log(direction)
     console.log(up)
 
@@ -92,6 +92,10 @@ export default class Game {
     if (keyStates['r']) {
       direction = DIRECTION
       up = UP
+    }
+
+    if (keyStates['-']) {
+      velocity.add(direction.scale(0.05))
     }
 
     camera.direction = direction
